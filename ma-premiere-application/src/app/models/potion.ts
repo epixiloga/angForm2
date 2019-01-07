@@ -5,16 +5,18 @@ export class Potion {
     private _effect: string;
     private _ingredients: Ingredient[];
 
-    constructor(name: string, effect: string, ingredients: string[]) {
+    constructor(name: string, effect: string ,ingredients: Ingredient[]=null) {
         this.name = name;
         this.effect = effect;
-
-        if (ingredients) {
+        this._ingredients=ingredients;
+ 
+        if (!ingredients) {
             this._ingredients = [];
 
-            ingredients.forEach(el => {
-                this._ingredients.push(new Ingredient(0, el));
-            });
+            // let i = 0
+            // ingredients.forEach(el => {
+            //     this._ingredients.push(new Ingredient(i++, el));    
+            // });
         }
      }
 

@@ -7,7 +7,7 @@ import { Potion } from '../models/potion';
   styleUrls: ['./potion-details.component.css']
 })
 export class PotionDetailsComponent implements OnInit {
-  @Input() potion: Potion;
+  @Input() potion2: Potion;
 
   constructor() { }
 

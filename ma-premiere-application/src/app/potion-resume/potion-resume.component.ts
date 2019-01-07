@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output } from '@angular/core';
+import { Component, OnInit, EventEmitter, Input, Output } from '@angular/core';
 import { PotionsComponent } from '../potions/potions.component';
 import { Potion } from '../models/potion';
 import { potions } from '../models/potions';
@@ -14,7 +14,7 @@ import { ingreds } from '../models/ingreds';
 })
 export class PotionResumeComponent implements OnInit {
   @Input() potion: Potion ;
-
+  @Output() detail = new EventEmitter<Potion>();
 
   constructor() {}
 
@@ -22,7 +22,7 @@ export class PotionResumeComponent implements OnInit {
   }
 
   showDetail(potion: Potion): void {
-
+      this.detail.emit(potion)
   }
 
 }

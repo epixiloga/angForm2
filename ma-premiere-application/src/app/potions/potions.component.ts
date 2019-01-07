@@ -9,6 +9,7 @@ import { potions } from '../models/potions';
 })
 export class PotionsComponent implements OnInit, OnDestroy {
   potionList: Potion[];
+  potionDetail: Potion = new Potion('','');
 
   constructor() { }
 
@@ -18,6 +19,10 @@ export class PotionsComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
+  }
+
+  onClick(potion:Potion){
+      this.potionDetail = potion
   }
 
 }

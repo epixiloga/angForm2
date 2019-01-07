@@ -1,1 +1,16 @@
-<p>the details</p>
+<!-- Modal Structure -->
+<div id="modal-potion" class="modal">
+    <div class="modal-content">
+        <h4>{{ potion2.name }}</h4>
+        <p>{{ potion2.effect }}</p>
+        <div *ngIf="potion2._ingredients.length > 0">
+            <p>Ingredients:</p>
+            <ul>
+                <li *ngFor="let ing of potion2._ingredients">{{ ing.id }} - {{ ing.name }}</li>
+            </ul>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
+    </div>
+</div>
